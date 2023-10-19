@@ -1,11 +1,11 @@
 # love-is-like-the-movie
-는 거창한 이름이고 그냥 안드로이드 movie 앱인데 MVVM을 곁들인..
+는 거창한 이름이고 그냥 안드로이드 movie 앱인데 RxJava와 MVVM을 곁들인..
 
 - Kotlin
 - MVVM architectural pattern
 - Paging library for Pagination
 - RxJava
 - Retrofit
-- themoviedb.org REST API
+- [themoviedb.org REST API](https://developer.themoviedb.org/reference/intro/getting-started)
 
-강의 : https://www.youtube.com/playlist?list=PLRRNzqzbPLd906bPH-xFz9Oy2IcjqVWCH
+[참고 자료](https://www.youtube.com/playlist?list=PLRRNzqzbPLd906bPH-xFz9Oy2IcjqVWCH)
