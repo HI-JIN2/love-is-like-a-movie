@@ -84,4 +84,7 @@ dependencies {
     //retrofit 에서 받은 응답을 Observable 로 변환 (retrofit 과 같은 버전으로 해주시면 됩니다)
     //rx retrofit
     implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
 }

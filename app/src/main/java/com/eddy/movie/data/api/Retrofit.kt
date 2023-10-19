@@ -1,6 +1,8 @@
 package com.eddy.movie.data.api
 
 import com.eddy.movie.BuildConfig
+import com.eddy.movie.BuildConfig.API_KEY
+import com.eddy.movie.BuildConfig.BASE_URL
 import com.eddy.movie.util.ConnectivityInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -9,9 +11,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
 
-const val API_KEY = BuildConfig.API_KEY
-const val BASE_URL = BuildConfig.BASE_URL
-const val POSTER_BASE_URL = BuildConfig.POSTER_BASE_URL
 const val FIRST_PAGE = 1
 const val POST_PER_PAGE = 20
 
