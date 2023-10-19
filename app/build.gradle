@@ -2,6 +2,11 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
 }
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+def BASE_URL = properties.getProperty('BASE_URL')
+def API_KEY = properties.getProperty('API_KEY')
+def POSTER_BASE_URL = properties.getProperty('POSTER_BASE_URL')
 
 android {
     namespace 'com.eddy.movie'
@@ -10,9 +15,14 @@ android {
     defaultConfig {
         applicationId "com.eddy.movie"
         minSdk 24
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0"
+
+
+        buildConfigField("String", "BASE_URL", BASE_URL)
+        buildConfigField("String", "API_KEY", API_KEY)
+        buildConfigField("String", "POSTER_BASE_URL", POSTER_BASE_URL)
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -20,14 +30,21 @@ android {
     buildFeatures {
         viewBinding = true
         dataBinding = true
+        buildConfig = true
+
     }
 
     buildTypes {
+        debug {
+            buildConfigField "Boolean", "DEBUG_MODE", "true"
+        }
         release {
+            buildConfigField "Boolean", "DEBUG_MODE", "false"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -47,4 +64,24 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+
+    //retrofit
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //로그를 보기 위한 okHttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
+    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.11'
+
+    //RxAndroid와 RxJava , RxKotlin 추가
+    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
+    implementation 'io.reactivex.rxjava3:rxkotlin:3.0.0'
+
+    // 필요한 API를 찾아서 추가
+    implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
+
+    //retrofit 에서 받은 응답을 Observable 로 변환 (retrofit 과 같은 버전으로 해주시면 됩니다)
+    //rx retrofit
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
 }
