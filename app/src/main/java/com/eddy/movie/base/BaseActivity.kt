@@ -2,8 +2,10 @@ package com.eddy.movie.base
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+
 
 abstract class BaseActivity<B: ViewBinding>(
     val bindingFactory: (LayoutInflater) -> B
@@ -21,5 +23,9 @@ abstract class BaseActivity<B: ViewBinding>(
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
+    }
+
+    fun showToast(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
