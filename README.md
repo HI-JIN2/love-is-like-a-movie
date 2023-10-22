@@ -1,4 +1,4 @@
-# love-is-like-the-movie
+# love-is-like-a-movie
 는 거창한 이름이고 그냥 안드로이드 movie 앱인데 RxJava와 MVVM을 곁들인..  
   
 영화와 관련된 안드로이드 앱이구여,, 개인 프로젝트입니다. 기획을 어떻게 디벨롭할지는 잘 모르겠어요.. 허허  
@@ -15,4 +15,6 @@ version1은 일단 아래 기술들 익히는 용으로 만들거고, version2�
 - [themoviedb.org REST API](https://developer.themoviedb.org/reference/intro/getting-started)
 
 ## Reference
-[참고 자료](https://www.youtube.com/playlist?list=PLRRNzqzbPLd906bPH-xFz9Oy2IcjqVWCH)
+[참고 자료](https://www.youtube.com/playlist?list=PLRRNzqzbPLd906bPH-xFz9Oy2IcjqVWCH  
+제목의 어원은 아래와 같습니다
+![KakaoTalk_Photo_2023-10-23-00-11-39](https://github.com/HI-JIN2/love-is-like-the-movie/assets/94737714/4f005c74-4849-4e72-856a-b1d0b3004247)
