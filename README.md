@@ -15,6 +15,6 @@ version1은 일단 아래 기술들 익히는 용으로 만들거고, version2�
 - [themoviedb.org REST API](https://developer.themoviedb.org/reference/intro/getting-started)
 
 ## Reference
-[참고 자료](https://www.youtube.com/playlist?list=PLRRNzqzbPLd906bPH-xFz9Oy2IcjqVWCH  
-제목의 어원은 아래와 같습니다
+[참고 자료](https://www.youtube.com/playlist?list=PLRRNzqzbPLd906bPH-xFz9Oy2IcjqVWCH)   
+[제목의 어원](https://www.youtube.com/watch?v=42A-rFdralM)은 아래와 같습니다
 ![KakaoTalk_Photo_2023-10-23-00-11-39](https://github.com/HI-JIN2/love-is-like-the-movie/assets/94737714/4f005c74-4849-4e72-856a-b1d0b3004247)
