@@ -1,7 +1,9 @@
-package com.eddy.movie.data.repository
+package com.eddy.movie.ui
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.eddy.movie.data.repository.MovieRepository
+import com.eddy.movie.data.repository.NetworkState
 import com.eddy.movie.data.vo.MovieDetailResponseDto
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 

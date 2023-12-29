@@ -1,5 +1,6 @@
 package com.eddy.movie.data.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.eddy.movie.data.api.MovieService
 import com.eddy.movie.data.vo.MovieDetailResponseDto
@@ -14,6 +15,7 @@ class MovieRepository (private val apiService: MovieService){
         movieDetailsDataSource = MovieDetailsDataSource(apiService, compositeDisposable)
         movieDetailsDataSource.fetchMovieDetails(movieId)
 
+        Log.d("d", movieId.toString())
         return movieDetailsDataSource.downloadedMovieDetailsResponse
     }
 

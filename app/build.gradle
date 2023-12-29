@@ -67,6 +67,9 @@ dependencies {
     //retrofit
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    //retrofit 에서 받은 응답을 Observable 로 변환 (retrofit 과 같은 버전으로 해주시면 됩니다)
+    //rx retrofit
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
 
     //로그를 보기 위한 okHttp
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
@@ -80,9 +83,6 @@ dependencies {
     // 필요한 API를 찾아서 추가
     implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
 
-    //retrofit 에서 받은 응답을 Observable 로 변환 (retrofit 과 같은 버전으로 해주시면 됩니다)
-    //rx retrofit
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
 
     //glide
     implementation 'com.github.bumptech.glide:glide:4.15.1'

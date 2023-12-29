@@ -10,7 +10,7 @@ import retrofit2.http.Query
 interface MovieService {
 
     @GET("movie/popular")  //upcoming , popular
-    fun getPopularMovie(
+     fun getPopularMovie(
         @Query("page") page: Int
     ): Single<MovieListResponseDto>
 

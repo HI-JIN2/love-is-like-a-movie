@@ -12,7 +12,6 @@ import com.eddy.movie.data.api.MovieService
 import com.eddy.movie.data.api.Retrofit
 import com.eddy.movie.data.repository.MovieRepository
 import com.eddy.movie.data.repository.NetworkState
-import com.eddy.movie.data.repository.MovieDetailsViewModel
 import com.eddy.movie.data.vo.MovieDetailResponseDto
 import com.eddy.movie.databinding.ActivitySingleMovieBinding
 import com.eddy.movie.util.ConnectivityInterceptor
@@ -28,9 +27,9 @@ class MovieDetailsActivity :
         super.onCreate(savedInstanceState)
 
 
-        val movieId: Int = intent.getIntExtra("id",1)
-
-        val apiService: MovieService = Retrofit.getClient(ConnectivityInterceptor(this))
+        val movieId: Int = intent.getIntExtra("id",575264)
+//ConnectivityInterceptor(this)
+        val apiService: MovieService = Retrofit.getClient()
 
         repository = MovieRepository(apiService)
         viewModel = getViewModel(movieId)

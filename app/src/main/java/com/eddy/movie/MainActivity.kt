@@ -14,7 +14,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>({ ActivityMainBinding.inf
 
         binding.btn1.setOnClickListener {
             val intent = Intent(this, MovieDetailsActivity::class.java)
-            intent.putExtra("id",299534)
+            intent.putExtra("id",575264)
             showToast("영화의 상세보기로 넘어갑니다.")
             startActivity(intent)
         }

@@ -20,6 +20,7 @@ class MovieDetailsDataSource (private val apiService: MovieService, private val 
 
     fun fetchMovieDetails(movieId: Int){
         _networkState.postValue(NetworkState.LOADING)
+        Log.d("d", movieId.toString())
 
         try {
             compositeDisposable.add(
@@ -27,8 +28,13 @@ class MovieDetailsDataSource (private val apiService: MovieService, private val 
                     .subscribeOn(Schedulers.io())
                     .subscribe (
                         {
+                            Log.d("d",it.title)
+
                             _downloadedMovieDetailsResponse.postValue(it)
+                            Log.d("d",it.title)
+
                             _networkState.postValue(NetworkState.LOADED)
+                            Log.d("d",it.title)
                         },
                         {
                             _networkState.postValue(NetworkState.ERROR)
@@ -38,7 +44,8 @@ class MovieDetailsDataSource (private val apiService: MovieService, private val 
                     )
             )
 
-        }catch(e: Exception){
+        }
+        catch(e: Exception){
             e.message?.let { Log.e("MovieDetailsDataSource", it) }
         }
     }

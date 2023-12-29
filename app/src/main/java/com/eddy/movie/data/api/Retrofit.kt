@@ -19,7 +19,8 @@ const val POST_PER_PAGE = 20
 
 object Retrofit{
 
-    fun getClient(connectivityInterceptor: ConnectivityInterceptor): MovieService
+    //connectivityInterceptor: ConnectivityInterceptor
+    fun getClient(): MovieService
     {
         val requestInterceptor = Interceptor { chain ->
             // Interceptor take only one argument which is a lambda function so parenthesis can be omitted
