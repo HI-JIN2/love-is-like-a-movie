@@ -16,7 +16,7 @@ class NetworkState(val status :Status, val msg: String) {
 
             LOADED = NetworkState(Status.SUCCESS, "Success")
             LOADING = NetworkState(Status.RUNNING, "Running")
-            ERROR = NetworkState(Status.FAILED, "Failed")
+            ERROR = NetworkState(Status.FAILED, "Something went wrong")
         }
     }
 }
