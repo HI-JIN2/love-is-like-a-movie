@@ -1,4 +1,4 @@
-package com.eddy.movie.ui
+package com.eddy.movie.ui.detail
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel

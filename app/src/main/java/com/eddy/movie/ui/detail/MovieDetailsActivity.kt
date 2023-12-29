@@ -1,4 +1,4 @@
-package com.eddy.movie.ui
+package com.eddy.movie.ui.detail
 
 import android.os.Bundle
 import android.view.View
@@ -14,7 +14,6 @@ import com.eddy.movie.data.repository.MovieRepository
 import com.eddy.movie.data.repository.NetworkState
 import com.eddy.movie.data.vo.MovieDetailResponseDto
 import com.eddy.movie.databinding.ActivitySingleMovieBinding
-import com.eddy.movie.util.ConnectivityInterceptor
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -54,7 +53,7 @@ class MovieDetailsActivity :
         binding.movieRating.text = it.rating
         binding.movieRuntime.text = it.runtime.toString() + " minutes"
         binding.movieBudget.text = formatCurrency.format(it.budget)
-        binding.movieRevenue.text = formatCurrency.format(it.revenue)
+//        binding.movieRevenue.text = formatCurrency.format(it.revenue)
         binding.movieOverview.text = it.overview
 
         val moviePosterURL = POSTER_BASE_URL + it.posterPath

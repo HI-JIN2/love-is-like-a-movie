@@ -1,13 +1,11 @@
 package com.eddy.movie.data.api
 
-import com.eddy.movie.BuildConfig
 import com.eddy.movie.BuildConfig.API_KEY
 import com.eddy.movie.BuildConfig.BASE_URL
-import com.eddy.movie.util.ConnectivityInterceptor
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -49,7 +47,7 @@ object Retrofit{
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(BASE_URL)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MovieService::class.java)  // this line of code can be removed and added in the part where it is instantiated

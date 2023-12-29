@@ -14,16 +14,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Movie"
+        tools:ignore="GoogleAppIndexingWarning"
         tools:targetApi="31">
         <activity
-            android:name=".ui.MovieDetailsActivity"
+            android:name=".ui.detail.MovieDetailsActivity"
             android:exported="true">
         </activity>
         <activity
             android:name=".base.BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true" >
 
             <intent-filter>
