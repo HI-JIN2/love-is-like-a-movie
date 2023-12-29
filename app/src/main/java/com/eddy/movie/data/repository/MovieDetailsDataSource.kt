@@ -28,13 +28,13 @@ class MovieDetailsDataSource (private val apiService: MovieService, private val 
                     .subscribeOn(Schedulers.io())
                     .subscribe (
                         {
-                            Log.d("d",it.title)
+//                            Log.d("MovieDetailsDataSource",it.title)
 
                             _downloadedMovieDetailsResponse.postValue(it)
-                            Log.d("d",it.title)
+//                            Log.d("MovieDetailsDataSource",it.title)
 
                             _networkState.postValue(NetworkState.LOADED)
-                            Log.d("d",it.title)
+//                            Log.d("MovieDetailsDataSource",it.title)
                         },
                         {
                             _networkState.postValue(NetworkState.ERROR)

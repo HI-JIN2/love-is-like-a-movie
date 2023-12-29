@@ -9,6 +9,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 
 const val FIRST_PAGE = 1
@@ -42,7 +43,7 @@ object Retrofit{
             .addInterceptor(requestInterceptor)
             //.addInterceptor(connectivityInterceptor)
 //            .readTimeout(60, TimeUnit.SECONDS)
-//            .connectTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
             .build()
 
         return Retrofit.Builder()

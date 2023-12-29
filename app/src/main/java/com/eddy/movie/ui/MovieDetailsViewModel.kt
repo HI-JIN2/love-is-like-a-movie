@@ -16,10 +16,10 @@ class MovieDetailsViewModel(private val movieRepository: MovieRepository, movieI
     }
 
     val networkState: LiveData<NetworkState> by lazy {
-        movieRepository.getMovieDatailsNetworkState()
+        movieRepository.getMovieDetailsNetworkState()
     }
 
-    override fun onCleared() {
+    override fun onCleared() { //when destroyed
         super.onCleared()
         compositDisposable.dispose()
     }

@@ -15,11 +15,11 @@ class MovieRepository (private val apiService: MovieService){
         movieDetailsDataSource = MovieDetailsDataSource(apiService, compositeDisposable)
         movieDetailsDataSource.fetchMovieDetails(movieId)
 
-        Log.d("d", movieId.toString())
+        Log.d("MovieRepository", movieId.toString())
         return movieDetailsDataSource.downloadedMovieDetailsResponse
     }
 
-    fun getMovieDatailsNetworkState(): LiveData<NetworkState>{
+    fun getMovieDetailsNetworkState(): LiveData<NetworkState>{
         return movieDetailsDataSource.networkState
     }
 }
