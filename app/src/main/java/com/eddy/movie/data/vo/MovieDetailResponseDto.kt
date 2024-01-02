@@ -14,7 +14,7 @@ data class MovieDetailResponseDto(
     val posterPath: String,
     @SerializedName("release_date")
     val releaseDate: String,
-    val revenue: Int,
+    val revenue: Long,
     val runtime: Int,
     val tagline: String,
     val status: String,

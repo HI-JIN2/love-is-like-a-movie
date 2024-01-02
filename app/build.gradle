@@ -60,7 +60,6 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation 'com.google.android.material:material:1.10.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
-//    implementation 'androidx.databinding:library:3.2.0-alpha11'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
@@ -68,6 +67,10 @@ dependencies {
     //retrofit
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+
+    //retrofit 에서 받은 응답을 Observable 로 변환 (retrofit 과 같은 버전으로 해주시면 됩니다)
+    //rx retrofit
+    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
 
     //로그를 보기 위한 okHttp
     implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.11'
@@ -81,7 +84,13 @@ dependencies {
     // 필요한 API를 찾아서 추가
     implementation 'com.jakewharton.rxbinding4:rxbinding:4.0.0'
 
-    //retrofit 에서 받은 응답을 Observable 로 변환 (retrofit 과 같은 버전으로 해주시면 됩니다)
-    //rx retrofit
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.9.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.15.1'
+
+    implementation 'androidx.paging:paging-runtime:2.1.0'
+    // Rx 호환 선택
+    implementation "androidx.paging:paging-rxjava2:2.1.0"
+
 }

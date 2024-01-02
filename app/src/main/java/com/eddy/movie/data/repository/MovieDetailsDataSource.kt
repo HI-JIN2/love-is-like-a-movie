@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.eddy.movie.data.api.MovieService
 import com.eddy.movie.data.vo.MovieDetailResponseDto
-import io.reactivex.rxjava3.core.Scheduler
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.schedulers.Schedulers
 
@@ -21,6 +20,7 @@ class MovieDetailsDataSource (private val apiService: MovieService, private val 
 
     fun fetchMovieDetails(movieId: Int){
         _networkState.postValue(NetworkState.LOADING)
+        Log.d("d", movieId.toString())
 
         try {
             compositeDisposable.add(
@@ -28,8 +28,13 @@ class MovieDetailsDataSource (private val apiService: MovieService, private val 
                     .subscribeOn(Schedulers.io())
                     .subscribe (
                         {
+//                            Log.d("MovieDetailsDataSource",it.title)
+
                             _downloadedMovieDetailsResponse.postValue(it)
+//                            Log.d("MovieDetailsDataSource",it.title)
+
                             _networkState.postValue(NetworkState.LOADED)
+//                            Log.d("MovieDetailsDataSource",it.title)
                         },
                         {
                             _networkState.postValue(NetworkState.ERROR)
@@ -39,7 +44,8 @@ class MovieDetailsDataSource (private val apiService: MovieService, private val 
                     )
             )
 
-        }catch(e: Exception){
+        }
+        catch(e: Exception){
             e.message?.let { Log.e("MovieDetailsDataSource", it) }
         }
     }

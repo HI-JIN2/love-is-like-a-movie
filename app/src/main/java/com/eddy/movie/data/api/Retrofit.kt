@@ -1,17 +1,15 @@
 package com.eddy.movie.data.api
 
-import com.eddy.movie.BuildConfig
-import com.eddy.movie.util.ConnectivityInterceptor
+import com.eddy.movie.BuildConfig.API_KEY
+import com.eddy.movie.BuildConfig.BASE_URL
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 
-const val API_KEY = BuildConfig.API_KEY
-const val BASE_URL = BuildConfig.BASE_URL
-const val POSTER_BASE_URL = BuildConfig.POSTER_BASE_URL
 const val FIRST_PAGE = 1
 const val POST_PER_PAGE = 20
 
@@ -20,7 +18,8 @@ const val POST_PER_PAGE = 20
 
 object Retrofit{
 
-    fun getClient(connectivityInterceptor: ConnectivityInterceptor): MovieService
+    //connectivityInterceptor: ConnectivityInterceptor
+    fun getClient(): MovieService
     {
         val requestInterceptor = Interceptor { chain ->
             // Interceptor take only one argument which is a lambda function so parenthesis can be omitted
@@ -42,13 +41,13 @@ object Retrofit{
             .addInterceptor(requestInterceptor)
             //.addInterceptor(connectivityInterceptor)
 //            .readTimeout(60, TimeUnit.SECONDS)
-//            .connectTimeout(60, TimeUnit.SECONDS)
+            .connectTimeout(60, TimeUnit.SECONDS)
             .build()
 
         return Retrofit.Builder()
             .client(okHttpClient)
             .baseUrl(BASE_URL)
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(MovieService::class.java)  // this line of code can be removed and added in the part where it is instantiated
